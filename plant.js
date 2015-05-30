@@ -35,11 +35,15 @@ var plant = {
     }
     else if (plant.stage === "a plant"){
       plant.height += 2;
+      if (plant.height > 12){
+        plant.height = 12;
+      }
     }
+    console.log(plant.status());
   },
 
   feed: function(food){
-    console.log ("you fed your plant");
+    console.log ("you fed your plant " + food);
     if (plant.overWatered && plant.overFed){
       plant.stage = "dead";
     }
@@ -56,8 +60,9 @@ var plant = {
     else if (food === "plant food"){
       plant.height += 1;
     }
+    console.log(plant.status());
   },
-  
+
   status: function(){
     if (plant.blooming === true){
       return "you have " + plant.stage + ", it is " + plant.height + " inches tall and has flowers"
@@ -71,25 +76,17 @@ var plant = {
   }
 }
 
-console.log(plant.status());
 plant.water();
-console.log(plant.status());
 plant.water();
-console.log(plant.status());
 plant.feed("plant food");
-console.log(plant.status());
 plant.feed();
-console.log(plant.status());
 plant.water();
-console.log(plant.status());
 plant.water();
-console.log(plant.status());
 plant.feed("plant food");
-console.log(plant.status());
 plant.feed("plant food");
-console.log(plant.status());
 plant.water();
 plant.water();
+plant.feed("antifreeze");
 plant.water();
 plant.water();
 plant.water();
@@ -100,5 +97,3 @@ plant.feed();
 plant.move("porch");
 plant.feed();
 plant.feed();
-console.log(plant.status());
-console.log(plant.status());
