@@ -86,7 +86,6 @@ plant.feed("plant food");
 plant.feed("plant food");
 plant.water();
 plant.water();
-plant.feed("antifreeze");
 plant.water();
 plant.water();
 plant.water();
